@@ -142,6 +142,7 @@ namespace PraktikumWeek15
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 10;
+            this.textBox1.Visible = false;
             // 
             // label9
             // 
@@ -151,6 +152,7 @@ namespace PraktikumWeek15
             this.label9.Size = new System.Drawing.Size(23, 20);
             this.label9.TabIndex = 11;
             this.label9.Text = "%";
+            this.label9.Visible = false;
             // 
             // Form2
             // 

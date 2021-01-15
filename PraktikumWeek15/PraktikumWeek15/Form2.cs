@@ -23,12 +23,10 @@ namespace PraktikumWeek15
             int diskon = Convert.ToInt32(textBox1.Text);
             label2.Text = Form1.subtotal.ToString();
             label4.Text = Form1.tax.ToString();
-            if (checkBoxDiscount.Checked == true)
-            {
-                discount = diskon/100 * Form1.subtotal;
-            }
+            discount = diskon * Form1.subtotal / 100;         
             label6.Text = discount.ToString();
-            label8.Text = Convert.ToString(Form1.subtotal + Form1.tax - discount);
+            int total = Form1.subtotal + Form1.tax - discount;
+            label8.Text = total.ToString();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -38,7 +36,11 @@ namespace PraktikumWeek15
 
         private void checkBoxDiscount_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBoxDiscount.Checked == true)
+            {
+                textBox1.Visible = true;
+                label9.Visible = true;
+            }
         }
     }
 }

@@ -132,6 +132,15 @@ namespace PraktikumWeek15
             listBoxItems.Items.Add(comboBoxMenu.SelectedItem);
             listBoxHarga.Items.Add(labelNominal.Text);
             counter++;
+            if (listBoxItems.Items.Count == 0)
+            {
+                buttonDelete.Enabled = false;
+            }
+            else
+            {
+                buttonDelete.Enabled = true;
+            }
+            
             //subtotal += Convert.ToInt32(listBoxHarga.Items);
         }
 
@@ -141,11 +150,16 @@ namespace PraktikumWeek15
             {
                 buttonDelete.Enabled = false;
             }
-            else
+            else 
             {
+                buttonDelete.Enabled = true;
                 int urutan = listBoxItems.SelectedIndex;
                 listBoxItems.Items.RemoveAt(urutan);
                 listBoxHarga.Items.RemoveAt(urutan);
+                if (listBoxItems.Items.Count == 0)
+                {
+                    buttonDelete.Enabled = false;
+                }
                 counter--;
                 //subtotal -= Convert.ToInt32(listBoxHarga.SelectedItem);
             }
