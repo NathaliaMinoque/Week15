@@ -131,6 +131,7 @@ namespace PraktikumWeek15
         {
             listBoxItems.Items.Add(comboBoxMenu.SelectedItem);
             listBoxHarga.Items.Add(labelNominal.Text);
+            counter++;
             //subtotal += Convert.ToInt32(listBoxHarga.Items);
         }
 
@@ -145,12 +146,14 @@ namespace PraktikumWeek15
                 int urutan = listBoxItems.SelectedIndex;
                 listBoxItems.Items.RemoveAt(urutan);
                 listBoxHarga.Items.RemoveAt(urutan);
+                counter--;
                 //subtotal -= Convert.ToInt32(listBoxHarga.SelectedItem);
             }
 
         }
 
         public static int subtotal = 0;
+        public static int tax = 0;
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
             if (listBoxItems.Items.Count == 0)
@@ -159,6 +162,12 @@ namespace PraktikumWeek15
             }
             else
             {
+                for (int i=0; i< listBoxItems.Items.Count; i++)
+                {
+                    subtotal = subtotal + Convert.ToInt32(listBoxHarga.Items[i]);
+                }
+                tax = subtotal / 10;
+                //MessageBox.Show(tax.ToString());
                 Form2 form2 = new Form2();
                 form2.Show();
                 this.Hide();

@@ -39,6 +39,8 @@ namespace PraktikumWeek15
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonCalculate = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkBoxDiscount
@@ -50,6 +52,7 @@ namespace PraktikumWeek15
             this.checkBoxDiscount.TabIndex = 0;
             this.checkBoxDiscount.Text = "Discount";
             this.checkBoxDiscount.UseVisualStyleBackColor = true;
+            this.checkBoxDiscount.CheckedChanged += new System.EventHandler(this.checkBoxDiscount_CheckedChanged);
             // 
             // label1
             // 
@@ -125,7 +128,7 @@ namespace PraktikumWeek15
             // 
             // buttonCalculate
             // 
-            this.buttonCalculate.Location = new System.Drawing.Point(12, 48);
+            this.buttonCalculate.Location = new System.Drawing.Point(37, 84);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(125, 42);
             this.buttonCalculate.TabIndex = 9;
@@ -133,11 +136,29 @@ namespace PraktikumWeek15
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(37, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(144, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "%";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonCalculate);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -150,6 +171,7 @@ namespace PraktikumWeek15
             this.Controls.Add(this.checkBoxDiscount);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +189,7 @@ namespace PraktikumWeek15
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonCalculate;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
     }
 }
