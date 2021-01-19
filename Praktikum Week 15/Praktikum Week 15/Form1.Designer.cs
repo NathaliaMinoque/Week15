@@ -33,13 +33,13 @@ namespace Praktikum_Week_15
             this.textBoxNamaItem = new System.Windows.Forms.TextBox();
             this.labelKategori = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonMakanan = new System.Windows.Forms.RadioButton();
             this.radioButtonMinuman = new System.Windows.Forms.RadioButton();
+            this.radioButtonMakanan = new System.Windows.Forms.RadioButton();
             this.buttonInput = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
-            this.checkBoxMakanan = new System.Windows.Forms.CheckBox();
             this.checkBoxMinuman = new System.Windows.Forms.CheckBox();
+            this.checkBoxMakanan = new System.Windows.Forms.CheckBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.buttonPindah = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -83,17 +83,6 @@ namespace Praktikum_Week_15
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // radioButtonMakanan
-            // 
-            this.radioButtonMakanan.AutoSize = true;
-            this.radioButtonMakanan.Location = new System.Drawing.Point(0, 0);
-            this.radioButtonMakanan.Name = "radioButtonMakanan";
-            this.radioButtonMakanan.Size = new System.Drawing.Size(100, 24);
-            this.radioButtonMakanan.TabIndex = 0;
-            this.radioButtonMakanan.TabStop = true;
-            this.radioButtonMakanan.Text = "Makanan";
-            this.radioButtonMakanan.UseVisualStyleBackColor = true;
-            // 
             // radioButtonMinuman
             // 
             this.radioButtonMinuman.AutoSize = true;
@@ -104,6 +93,17 @@ namespace Praktikum_Week_15
             this.radioButtonMinuman.TabStop = true;
             this.radioButtonMinuman.Text = "Minuman";
             this.radioButtonMinuman.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMakanan
+            // 
+            this.radioButtonMakanan.AutoSize = true;
+            this.radioButtonMakanan.Location = new System.Drawing.Point(0, 0);
+            this.radioButtonMakanan.Name = "radioButtonMakanan";
+            this.radioButtonMakanan.Size = new System.Drawing.Size(100, 24);
+            this.radioButtonMakanan.TabIndex = 0;
+            this.radioButtonMakanan.TabStop = true;
+            this.radioButtonMakanan.Text = "Makanan";
+            this.radioButtonMakanan.UseVisualStyleBackColor = true;
             // 
             // buttonInput
             // 
@@ -136,17 +136,6 @@ namespace Praktikum_Week_15
             this.groupBoxFilter.TabStop = false;
             this.groupBoxFilter.Text = "Filter";
             // 
-            // checkBoxMakanan
-            // 
-            this.checkBoxMakanan.AutoSize = true;
-            this.checkBoxMakanan.Location = new System.Drawing.Point(7, 26);
-            this.checkBoxMakanan.Name = "checkBoxMakanan";
-            this.checkBoxMakanan.Size = new System.Drawing.Size(101, 24);
-            this.checkBoxMakanan.TabIndex = 0;
-            this.checkBoxMakanan.Text = "Makanan";
-            this.checkBoxMakanan.UseVisualStyleBackColor = true;
-            this.checkBoxMakanan.CheckedChanged += new System.EventHandler(this.checkBoxMakanan_CheckedChanged);
-            // 
             // checkBoxMinuman
             // 
             this.checkBoxMinuman.AutoSize = true;
@@ -158,6 +147,17 @@ namespace Praktikum_Week_15
             this.checkBoxMinuman.UseVisualStyleBackColor = true;
             this.checkBoxMinuman.CheckedChanged += new System.EventHandler(this.checkBoxMinuman_CheckedChanged);
             // 
+            // checkBoxMakanan
+            // 
+            this.checkBoxMakanan.AutoSize = true;
+            this.checkBoxMakanan.Location = new System.Drawing.Point(7, 26);
+            this.checkBoxMakanan.Name = "checkBoxMakanan";
+            this.checkBoxMakanan.Size = new System.Drawing.Size(101, 24);
+            this.checkBoxMakanan.TabIndex = 0;
+            this.checkBoxMakanan.Text = "Makanan";
+            this.checkBoxMakanan.UseVisualStyleBackColor = true;
+            this.checkBoxMakanan.CheckedChanged += new System.EventHandler(this.checkBoxMakanan_CheckedChanged);
+            // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
@@ -166,6 +166,7 @@ namespace Praktikum_Week_15
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(177, 284);
             this.listBox2.TabIndex = 9;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // buttonPindah
             // 

@@ -87,61 +87,75 @@ namespace Praktikum_Week_15
 
         private void buttonPindah_Click(object sender, EventArgs e)
         {
-            listBox2.Items.Add(listBox1.SelectedItems);
+            foreach (object list in listBox1.SelectedItems)
+            {
+                if (listBox2.Items.Contains(listBox1.SelectedItems))
+                {
+                    MessageBox.Show("hayo");
+                }
+                else
+                {
+                    listBox2.Items.Add(list);
+                }
+            }
+            
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            listBox2.Items.Clear();
+            if (listBox2.SelectedIndex > -1)
+            {
+                //foreach (object list in listBox2.SelectedItems)
+                //{
+                //    listBox2.Items.Remove(list);
+                //}             
+            }
+            else
+            {
+                listBox2.Items.Clear();
+            }
         }
 
         public string[] simpan = new string[countermakanan + counterminuman];
         private void checkBoxMakanan_CheckedChanged(object sender, EventArgs e)
-        {
-            int c = 0;
-            foreach (string item in menu)
-            {
-
-                simpan[c] = item;
-                //c++;
-            }
+        {  
             if (checkBoxMakanan.Checked == true)
             {
-                listBox1.Items.Clear();
                 checkBoxMinuman.Checked = false;
+                listBox1.ClearSelected();
                 for (int i=0; i<countermakanan; i++)
                 {
-                    listBox1.Items.Add(menu[i, 0]);
+                    listBox1.SelectedItem = menu[i, 0];
                 }
             }
             else
             {
-                listBox1.Items.Add(simpan);
-            }
+                listBox1.ClearSelected();
+            } 
         }
 
         private void checkBoxMinuman_CheckedChanged(object sender, EventArgs e)
         {
-            int c = 0;
-            foreach (string item in menu)
-            {
-
-                simpan[c] = item;
-                //c++;
-            }
             if (checkBoxMinuman.Checked == true)
             {
-                listBox1.Items.Clear();
                 checkBoxMakanan.Checked = false;
+                listBox1.ClearSelected();
+                listBox1.SelectedItem = false;
                 for (int i = 0; i < counterminuman; i++)
                 {
-                    listBox1.Items.Add(menu[i, 1]);
+                    listBox1.SelectedItem = menu[i, 1];
                 }
             }
             else
             {
-                listBox1.Items.Add(simpan);
+                listBox1.ClearSelected();
             }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox1.ClearSelected();
+            listBox2.SelectionMode = SelectionMode.MultiSimple;
         }
     }
 }
