@@ -117,7 +117,6 @@ namespace Praktikum_Week_15
             }
         }
 
-        public string[] simpan = new string[countermakanan + counterminuman];
         private void checkBoxMakanan_CheckedChanged(object sender, EventArgs e)
         {  
             if (checkBoxMakanan.Checked == true)
