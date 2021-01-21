@@ -87,32 +87,33 @@ namespace Praktikum_Week_15
 
         private void buttonPindah_Click(object sender, EventArgs e)
         {
-            foreach (object list in listBox1.SelectedItems)
+            for (int i = 0; i <= listBox1.SelectedIndices.Count-1 ; i++)
             {
-                if (listBox2.Items.Contains(listBox1.SelectedItems))
+                if (listBox2.Items.Contains(listBox1.SelectedItems[i]))
                 {
-                    MessageBox.Show("hayo");
+                    
                 }
                 else
                 {
-                    listBox2.Items.Add(list);
+                    listBox2.Items.Add(listBox1.SelectedItems[i]);
                 }
             }
-            
+            listBox1.ClearSelected();
+            checkBoxMakanan.Checked = false;
+            checkBoxMinuman.Checked = false;
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if (listBox2.SelectedIndex > -1)
+            if (listBox2.SelectedItems.Count == 0)
             {
-                //foreach (object list in listBox2.SelectedItems)
-                //{
-                //    listBox2.Items.Remove(list);
-                //}             
+                listBox2.Items.Clear();
             }
             else
             {
-                listBox2.Items.Clear();
+                for (int i=listBox2.SelectedIndices.Count-1; i>=0; i--)
+                {
+                    listBox2.Items.Remove(listBox2.SelectedItems[i]);
+                }
             }
         }
 
@@ -139,8 +140,7 @@ namespace Praktikum_Week_15
             if (checkBoxMinuman.Checked == true)
             {
                 checkBoxMakanan.Checked = false;
-                listBox1.ClearSelected();
-                listBox1.SelectedItem = false;
+                listBox1.ClearSelected();             
                 for (int i = 0; i < counterminuman; i++)
                 {
                     listBox1.SelectedItem = menu[i, 1];
